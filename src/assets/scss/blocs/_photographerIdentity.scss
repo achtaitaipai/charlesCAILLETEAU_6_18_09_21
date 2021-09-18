@@ -1,0 +1,100 @@
+.photographerIdentity {
+  display: flex;
+  gap: 1rem;
+  background: $secondary-2;
+  align-items: flex-start;
+  width: 86%;
+  margin: auto;
+  padding: 4rem 3.125rem 4rem 2rem;
+  &__title {
+    font-size: 4rem;
+    line-height: 1;
+    color: $primary-2;
+  }
+  &__text {
+    line-height: 2;
+  }
+  &__location {
+    font-size: 1.5rem;
+    color: $primary-1;
+  }
+  &__slogan {
+    color: $secondary-1;
+  }
+  &__tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.9rem;
+    gap: 0.625rem 0.3125rem;
+  }
+  &__lien {
+    @include tag;
+    transition: color 0.3s, background-color 0.3s;
+    &:hover,&:focus {
+      background: $primary-1;
+      color: white;
+    }
+  }
+  &__contact {
+    padding: 1.3125rem 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 0.3125rem;
+    background: $primary-1;
+    color: white;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+    &:hover,
+    &:focus {
+      background: $primary-2;
+      color: black;
+    }
+  }
+  &__imgContainer {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 960px) {
+    &__title {
+      font-size: 2.25rem;
+    }
+    &__location,
+    &__slogan,
+    &__lien {
+      font-size: 0.8125rem;
+    }
+    &__contact {
+      position: fixed;
+      left: 50%;
+      bottom: 2rem;
+      transform: translateX(-50%);
+      padding: 0.3125rem 1rem;
+      font-size: 1rem;
+    }
+    &__imgContainer {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 4rem 1.25rem 4rem 1.25rem;
+    background: transparent;
+    &__imgContainer {
+      position: absolute;
+      right: 5vw;
+    }
+  }
+}

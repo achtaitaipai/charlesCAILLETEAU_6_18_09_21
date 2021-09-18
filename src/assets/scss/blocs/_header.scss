@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 86%;
+  margin: 0 auto 0 auto;
+  gap: 2rem;
+  padding: 3rem 0;
+  &__logo {
+    height: 2.35rem;
+    img {
+      height: 100%;
+    }
+  }
+
+  &__link {
+    display: none;
+  }
+}
+.nav {
+  @media (max-width: 1340px) {
+    width: 100%;
+  }
+  &__tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__tag {
+    margin: 0 0.3125rem 0.3125rem 0;
+    a {
+      @include tag;
+      transition: color 0.3s, background-color 0.3s;
+      &:hover {
+        background: $primary-1;
+        color: white;
+      }
+    }
+  }
+}

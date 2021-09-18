@@ -1,0 +1,7 @@
+@mixin tag {
+  border: 1px solid #c4c4c4;
+  border-radius: 0.6875rem;
+  padding: 0.1rem 0.5rem;
+  color: $primary-1;
+  font-weight: 500;
+}

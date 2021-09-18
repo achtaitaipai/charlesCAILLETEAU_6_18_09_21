@@ -1,0 +1,26 @@
+.main{
+    &__title{
+        position: absolute;
+        top: calc(4.175rem - 2vw);
+        right: 3%;
+        font-size: 2.5vw;
+        color: $primary-1;
+
+        @media(max-width:900px){
+            top: 3.5rem;
+            font-size: 0.875rem;
+        }
+    }
+    &__photographs{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        place-content: center;
+        gap: 3rem;
+        @media(max-width:900px){
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media(max-width:500px){
+            grid-template-columns: 100%;
+        }
+    }
+}

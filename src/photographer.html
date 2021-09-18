@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="header__logo"
+        ><img src="./assets/images/logo.svg" alt=""
+      /></a>
+    </header>
+    <main class="mainPhotographer">
+      <section class="photographerIdentity">
+        <div class="photographerIdentity__infos">
+          <h2 class="photographerIdentity__title">Mimi Keel</h2>
+          <div class="photographerIdentity__text">
+            <p class="photographerIdentity__location">London</p>
+            <p class="photographerIdentity__slogan">
+              Voir le beau dans le quotidien
+            </p>
+          </div>
+          <ul class="photographerIdentity__tagsList">
+            <li>
+              <a href="#" class="photographerIdentity__lien">#portrait</a>
+            </li>
+            <li><a href="#" class="photographerIdentity__lien">#events</a></li>
+            <li><a href="#" class="photographerIdentity__lien">#travel</a></li>
+            <li><a href="#" class="photographerIdentity__lien">#fashion</a></li>
+          </ul>
+        </div>
+        <button class="photographerIdentity__contact">Contactez-moi</button>
+        <div class="photographerIdentity__imgContainer">
+          <img
+            src="./assets/images/photographers/MimiKeel.jpg"
+            alt=""
+            class="photographerIdentity__img"
+          />
+        </div>
+      </section>
+      <section class="medias">
+        <div class="selectStyled">
+          <label class="selectLabel" id="sortBy">Trier par</label>
+            <select class="selectNative js-selectNative" aria-labelledby="sortBy">
+              <option value="popularity">Popularité</option>
+              <option value="date">Date</option>
+              <option value="title">Titre</option>
+            </select>
+  
+        </div>
+        <div class="medias__container">
+          <a href="#" class="mediaCard">
+            <div class="mediaCard__imgContainer">
+              <img
+                src="./assets/images/EllieRose/Architecture_Connected_Curves.jpg"
+                alt=""
+                class="mediaCard__media"
+              />
+            </div>
+            <div class="mediaCard__infos">
+              <h3 class="mediaCard__title">Arc-en-ciel</h3>
+              <div class="mediaCard__likes">
+                12 <span class="mediaCard__heart">&#9829;</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="mediaCard">
+            <div class="mediaCard__imgContainer">
+              <video class="mediaCard__media">
+                <source
+                  src="./assets/images/EllieRose/Sport_Tricks_in_the_air.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="mediaCard__infos">
+              <h3 class="mediaCard__title">Arc-en-ciel</h3>
+              <div class="mediaCard__likes">
+                12 <span class="mediaCard__heart">&#9829;</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="mediaCard">
+            <div class="mediaCard__imgContainer">
+              <img
+                src="./assets/images/EllieRose/Architecture_Connected_Curves.jpg"
+                alt=""
+                class="mediaCard__media"
+              />
+            </div>
+            <div class="mediaCard__infos">
+              <h3 class="mediaCard__title">Arc-en-ciel</h3>
+              <div class="mediaCard__likes">
+                12 <span class="mediaCard__heart">&#9829;</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="mediaCard">
+            <div class="mediaCard__imgContainer">
+              <img
+                src="./assets/images/EllieRose/Architecture_Connected_Curves.jpg"
+                alt=""
+                class="mediaCard__media"
+              />
+            </div>
+            <div class="mediaCard__infos">
+              <h3 class="mediaCard__title">Arc-en-ciel</h3>
+              <div class="mediaCard__likes">
+                12 <span class="mediaCard__heart">&#9829;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/js/customSelect.js"></script>
+  </body>
+</html>
