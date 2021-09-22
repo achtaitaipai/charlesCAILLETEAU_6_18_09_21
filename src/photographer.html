@@ -44,12 +44,11 @@
       <section class="medias">
         <div class="selectStyled">
           <label class="selectLabel" id="sortBy">Trier par</label>
-            <select class="selectNative js-selectNative" aria-labelledby="sortBy">
-              <option value="popularity">Popularité</option>
-              <option value="date">Date</option>
-              <option value="title">Titre</option>
-            </select>
-  
+          <select class="selectNative js-selectNative" aria-labelledby="sortBy">
+            <option value="popularity">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+          </select>
         </div>
         <div class="medias__container">
           <a href="#" class="mediaCard">
@@ -118,7 +117,92 @@
           </a>
         </div>
       </section>
+      <section class="dialog">
+        <form action="post" class="dialogForm">
+          <h1 class="dialogForm__title">Contactez-moi<br />Mimi Keel</h1>
+          <label for="firstName" class="dialogForm__label">Prénom</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="dialogForm__input"
+          />
+          <label for="lastName" class="dialogForm__label">Nom</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            class="dialogForm__input"
+          />
+          <label for="email" class="dialogForm__label">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="dialogForm__input"
+          />
+          <label for="message" class="dialogForm__label">Votre message</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            class="dialogForm__input"
+          ></textarea>
+          <input type="submit" value="Envoyer" class="dialogForm__submit" />
+          <button class="dialogForm__close">
+            <img src="./assets/images/close.svg" alt="" />
+          </button>
+        </form>
+      </section>
+      <section class="carousel">
+        <div class="carousel__container">
+          <ol class="carousel__frame">
+            <li class="carousel__item">
+              <img
+                src="./assets/images/EllieRose/Architecture_Connected_Curves.jpg"
+                alt=""
+                class="carousel__media"
+              />
+            </li>
+            <li class="carousel__item">
+              <video class="carousel__media" controls>
+                <source
+                  src="./assets/images/EllieRose/Sport_Tricks_in_the_air.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </li>
+            <li class="carousel__item">
+              <img
+                src="./assets/images/EllieRose/Architecture_White_Light.jpg"
+                alt=""
+                class="carousel__media"
+              />
+            </li>
+            <li class="carousel__item">
+              <img
+                src="./assets/images/EllieRose/Sport_Jump.jpg"
+                alt=""
+                class="carousel__media"
+              />
+            </li>
+            <li class="carousel__item">
+              <img
+                src="./assets/images/EllieRose/Sport_Race_End.jpg"
+                alt=""
+                class="carousel__media"
+              />
+            </li>
+          </ol>
+          <p class="carousel__legend">truc bidule</p>
+          <a href="#" class="carousel__prev">&#60;</a>
+          <a href="#" class="carousel__next">&#62;</a>
+          <button class="carousel__close">
+            <img src="./assets/images/close-red.svg" alt="" />
+          </button>
+        </div>
+      </section>
     </main>
-    <script src="./assets/js/customSelect.js"></script>
+    <script src="./assets/js/photographers.js" type="module"></script>
   </body>
 </html>

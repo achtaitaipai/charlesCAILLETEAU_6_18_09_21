@@ -1,7 +1,8 @@
+import { createComplexElement } from "./utils";
 /* 
 source : https://css-tricks.com/striking-a-balance-between-native-and-custom-select-elements/
 */
-class Select {
+export class Select {
   /**
    *
    * @param {HTMLElement} element
@@ -12,41 +13,12 @@ class Select {
 
     // wrap select in container
     const parent = this.elSelectNative.parentNode;
-    const wrapper = document.createElement('div');
-    wrapper.className="selectWrapper"
+    const wrapper = document.createElement("div");
+    wrapper.className = "selectWrapper";
     parent.replaceChild(wrapper, this.elSelectNative);
     wrapper.appendChild(this.elSelectNative);
 
-    // create select clone
-    this.elSelectCustom = document.createElement("div");
-    this.elSelectCustom.className = "selectCustom js-selectCustom";
-    this.elSelectCustom.setAttribute("aria-hidden", true);
-    this.element
-      .querySelector(".selectWrapper")
-      .appendChild(this.elSelectCustom);
-
-    this.elSelectCustomBox = document.createElement("div");
-    this.elSelectCustomBox.className = "selectCustom-trigger";
-    const value=this.elSelectNative.options[this.elSelectNative.selectedIndex].textContent
-    this.elSelectCustomBox.appendChild(
-      document.createTextNode(value)
-    );
-    this.elSelectCustom.appendChild(this.elSelectCustomBox);
-
-    this.elSelectCustomOpts = document.createElement("div");
-    this.elSelectCustomOpts.className = "selectCustom-options";
-    this.elSelectCustom.appendChild(this.elSelectCustomOpts);
-
-    const options = element.querySelector("select").children;
-
-    for (let i = 0; i < options.length; i++) {
-      const opt = options[i];
-      let customOption = document.createElement("div");
-      customOption.setAttribute("data-value", opt.value);
-      customOption.appendChild(document.createTextNode(opt.innerHTML));
-      customOption.className = "selectCustom-option";
-      this.elSelectCustomOpts.appendChild(customOption);
-    }
+    this.createSelectClone();
 
     this.customOptsList = Array.from(this.elSelectCustomOpts.children);
     this.optionsCount = this.customOptsList.length;
@@ -92,6 +64,53 @@ class Select {
         this.updateCustomSelectHovered(index);
       });
     });
+  }
+  createSelectClone() {
+    let obj = [
+      {
+        name: "root",
+        type: "div",
+        class: "selectCustom js-selectCustom",
+        attributes: {
+          ariaHidden: "true",
+        },
+        parent: "main",
+      },
+      {
+        type: "div",
+        class: "selectCustom-trigger",
+        content:
+          this.elSelectNative.options[this.elSelectNative.selectedIndex]
+            .textContent,
+        parent: "root",
+      },
+      {
+        name: "options",
+        type: "div",
+        class: "selectCustom-options",
+        parent: "root",
+      },
+    ];
+    const options = this.element.querySelector("select").children;
+    for (let i = 0; i < options.length; i++) {
+      const option = {};
+      option.type = "div";
+      option.class = "selectCustom-option";
+      option.parent = "options";
+      option.attributes={dataValue :  options[i].value}
+      option.content=options[i].innerHTML
+      obj.push(option)
+    }
+    this.element
+      .querySelector(".selectWrapper")
+      .appendChild(createComplexElement(obj));
+    this.elSelectCustom = this.element.querySelector(".js-selectCustom");
+    this.elSelectCustomBox = this.element.querySelector(
+      ".selectCustom-trigger"
+    );
+    this.elSelectCustomOpts = this.element.querySelector(
+      ".selectCustom-options"
+    );
   }
 
   openSelectCustom() {
@@ -217,6 +236,3 @@ class Select {
     );
   }
 }
-
-Select.create();
-

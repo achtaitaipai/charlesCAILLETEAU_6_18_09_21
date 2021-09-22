@@ -41,7 +41,7 @@
 
   /* Add the focus states too, They matter, always! */
   .selectNative:focus {
-    box-shadow: #ff821f 0 0 0 2px;
+    box-shadow: $primary-2 0 0 0 2px;
   }
 
   //
@@ -68,6 +68,8 @@
   .selectCustom-trigger {
     background: $primary-1;
     color: white;
+    border: 0;
+    outline: 0;
     border-radius: 0.4rem;
   }
 
@@ -93,6 +95,7 @@
     padding: 0 0.8rem;
     line-height: 3rem;
     cursor: pointer;
+    transition: color .3s, background-color .3s;
   }
 
   .selectCustom-trigger::after {
@@ -107,14 +110,14 @@
 
 
   .selectCustom-trigger:hover {
+    background: $primary-2;
+    color: black;
   }
 
   .selectCustom-options {
     position: absolute;
-    // top: 0;
     left: 0;
     width: 100%;
-    // border-radius: 0.4rem;
     z-index: 1;
     display: none;
   }
