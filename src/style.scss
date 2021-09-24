@@ -1,17 +1,16 @@
-@import"assets/scss/utils/variables";
-@import"assets/scss/utils/mixins";
-@import"assets/scss/bases/bases";
-@import"assets/scss/blocs/header";
-@import"assets/scss/blocs/main";
-@import"assets/scss/blocs/photographerCard";
+@import 'assets/scss/utils/variables';
+@import 'assets/scss/utils/mixins';
+@import 'assets/scss/bases/bases';
+@import 'assets/scss/blocs/header';
+@import 'assets/scss/blocs/main';
+@import 'assets/scss/blocs/photographerCard';
 
-@import"assets/scss/blocs/mainPhotographer";
-@import"assets/scss/blocs/photographerIdentity";
-@import"assets/scss/blocs/select";
-@import"assets/scss/blocs/mediaCard";
-@import"assets/scss/blocs/dialog";
-@import"assets/scss/blocs/carousel";
-body{
-    font-family: 'DM Sans', sans-serif;
+@import 'assets/scss/blocs/mainPhotographer';
+@import 'assets/scss/blocs/photographerIdentity';
+@import 'assets/scss/blocs/select';
+@import 'assets/scss/blocs/mediaCard';
+@import 'assets/scss/blocs/dialog';
+@import 'assets/scss/blocs/carousel';
+body {
+  font-family: 'DM Sans', sans-serif;
 }
-

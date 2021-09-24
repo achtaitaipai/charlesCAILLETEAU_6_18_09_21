@@ -10,8 +10,8 @@
   opacity: 0;
   transform: translate3d(0, -2rem, 0);
   pointer-events: none;
-    transition: transform 0.3s, opacity 0.3s;
-    &.visible {
+  transition: transform 0.3s, opacity 0.3s;
+  &.visible {
     transform: translate3d(0, 0, 0);
     opacity: 1;
     pointer-events: visible;
@@ -22,9 +22,9 @@
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: 1fr 5fr 2rem;
     grid-template-areas:
-      ". frame close"
-      "prev frame next"
-      ". legend .";
+      '. frame close'
+      'prev frame next'
+      '. legend .';
   }
   &__frame {
     grid-area: frame;
