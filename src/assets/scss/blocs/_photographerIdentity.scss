@@ -56,6 +56,20 @@
     width: 100%;
     height: 100%;
   }
+  &__likesAndPrice {
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 2rem 1.3125rem;
+    background: $secondary-4;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 0.3125rem 0.3125rem 0 0;
+  }
   @media (max-width: 960px) {
     &__title {
       font-size: 2.25rem;
@@ -76,6 +90,9 @@
     &__imgContainer {
       width: 100px;
       height: 100px;
+    }
+    &__likesAndPrice {
+      display: none;
     }
   }
 

@@ -1,7 +1,8 @@
 import { createComplexElement, createElementFromObject } from './utils'
 
 export class Media {
-  constructor(obj, index) {
+  constructor(obj, refreshTotalLikes) {
+    this.refreshTotalLikes = refreshTotalLikes
     this.title = obj.title
     this.alt = obj.title
     this.src = obj.image || obj.video
@@ -12,11 +13,33 @@ export class Media {
     this.cardElement = this.createCard()
     this.carouselItemElement = this.createCarouselItem()
     this.appendElements()
+
+    this.likesEl = this.cardElement.querySelector('.mediaCard__likes')
+    this.onLikeClick = this.onLikeClick.bind(this)
+    this.likesEl.addEventListener('click', this.onLikeClick)
+  }
+
+  onLikeClick() {
+    this.likes++
+    this.likesEl.textContent = this.likesEl.textContent.replace(
+      this.likes - 1,
+      this.likes
+    )
+    this.refreshTotalLikes()
+    this.likesEl.removeEventListener('click', this.onLikeClick)
   }
 
   appendElements() {
     document.querySelector('.mediasContainer').append(this.cardElement)
     document.querySelector('.carousel__frame').append(this.carouselItemElement)
+  }
+
+  static getLikes(medias) {
+    let likes = 0
+    medias.forEach((media) => {
+      likes += media.likes
+    })
+    return likes
   }
 
   static sort(typeOfSort, medias) {
@@ -60,19 +83,19 @@ export class Media {
     const mediaCardObj = [
       {
         name: 'root',
-        type: 'a',
+        type: 'div',
         class: 'mediaCard',
         parent: 'main',
-        attributes: {
-          href: '#',
-          title: 'à remplir',
-        },
       },
       {
         name: 'imgContainer',
         class: 'mediaCard__imgContainer',
-        type: 'div',
+        type: 'a',
         parent: 'root',
+        attributes: {
+          href: '#',
+          title: 'à remplir',
+        },
       },
       {
         name: 'infos',
@@ -92,7 +115,7 @@ export class Media {
         class: 'mediaCard__likes',
         type: 'div',
         parent: 'infos',
-        content: this.likes,
+        content: this.likes + ' ',
       },
       {
         name: 'heart',

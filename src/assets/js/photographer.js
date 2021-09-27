@@ -81,6 +81,25 @@ export class Photographer {
           alt: `portrait de ${this.name}`,
         },
       },
+      {
+        name: 'photographerIdentity__likesAndPrice',
+        type: 'div',
+        class: 'photographerIdentity__likesAndPrice',
+        parent: 'root',
+      },
+      {
+        name: 'photographerIdentity__likes',
+        type: 'span',
+        class: 'photographerIdentity__likes',
+        parent: 'photographerIdentity__likesAndPrice',
+      },
+      {
+        name: 'photographerIdentity__price',
+        type: 'span',
+        class: 'photographerIdentity__price',
+        parent: 'photographerIdentity__likesAndPrice',
+        content: `${this.price}€/jour`,
+      },
     ]
     this.tags.forEach((tag) => {
       const tagEl = {
@@ -107,19 +126,25 @@ export class Photographer {
     const el = [
       {
         name: 'root',
-        type: 'a',
+        type: 'div',
         class: 'photographerCard',
+        parent: 'main',
+      },
+      {
+        name: 'link',
+        type: 'a',
+        class: 'photographerCard__link',
+        parent: 'root',
         attributes: {
           href: `photographer.html?id=${this.id}`,
           title: `découvrez le travail de ${this.name}`,
         },
-        parent: 'main',
       },
       {
         name: 'imgContainer',
         type: 'div',
         class: 'photographerCard__imgContainer',
-        parent: 'root',
+        parent: 'link',
       },
       {
         name: 'img',
@@ -135,7 +160,7 @@ export class Photographer {
         name: 'titre',
         type: 'h2',
         class: 'photographerCard__title',
-        parent: 'root',
+        parent: 'link',
         content: this.name,
       },
       {
@@ -173,14 +198,23 @@ export class Photographer {
       },
     ]
     this.tags.forEach((tag) => {
-      const tagEl = {
-        name: 'tag',
+      const tagLi = {
+        name: tag,
         type: 'li',
-        class: 'photographerCard__tag',
         parent: 'tags',
-        content: '#' + tag,
       }
-      el.push(tagEl)
+      el.push(tagLi)
+      const tagA = {
+        name: 'tag',
+        type: 'a',
+        class: 'photographerCard__tag',
+        parent: tag,
+        content: '#' + tag,
+        attributes: {
+          href: 'index.html?filter=' + tag,
+        },
+      }
+      el.push(tagA)
     })
     return createComplexElement(el)
   }

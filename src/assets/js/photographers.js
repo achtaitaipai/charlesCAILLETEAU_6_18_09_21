@@ -65,14 +65,19 @@ mediaData.sort((a, b) => {
 })
 const medias = []
 mediaData.forEach((data) => {
-  const media = new Media(data)
+  const media = new Media(data, function () {
+    document.querySelector(
+      '.photographerIdentity__likes'
+    ).textContent = `${Media.getLikes(medias)} ♥`
+  })
   medias.push(media)
 })
 Media.sort('popularity', medias)
 // au clique sur une mediaCard => ouvrir le carousel à l'image correspondante
 for (let i = 0; i < medias.length; i++) {
   const mediaCard = medias[i].cardElement
-  mediaCard.addEventListener('click', (e) => {
+  const mediaCardLink = mediaCard.querySelector('a')
+  mediaCardLink.addEventListener('click', (e) => {
     e.preventDefault()
     const index = [...mediaCard.parentElement.children].indexOf(mediaCard)
     carousel.open(index)
@@ -83,3 +88,7 @@ for (let i = 0; i < medias.length; i++) {
 Select.create(document.querySelector('.selectStyled'), (value) =>
   Media.sort(value, medias)
 )
+
+document.querySelector(
+  '.photographerIdentity__likes'
+).textContent = `${Media.getLikes(medias)} ♥`

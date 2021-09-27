@@ -31,11 +31,6 @@
     // margin: 0 0.3125rem 0.3125rem 0;
     a {
       @include tag;
-      transition: color 0.3s, background-color 0.3s;
-      &:hover {
-        background: $primary-1;
-        color: white;
-      }
     }
   }
 }
