@@ -7,8 +7,9 @@ export class Select {
    *
    * @param {HTMLElement} element
    */
-  constructor(element) {
+  constructor(element, onChangeFunction) {
     this.element = element
+    this.onChangeFunction = onChangeFunction
     this.elSelectNative = this.element.querySelector('select')
 
     // wrap select in container
@@ -47,6 +48,7 @@ export class Select {
         value,
         elRespectiveCustomOption.textContent
       )
+      this.onChangeFunction(value)
     })
 
     // Update selectCustom value when an option is clicked or hovered
@@ -58,6 +60,7 @@ export class Select {
         this.elSelectNative.value = value
         this.updateCustomSelectChecked(value, e.target.textContent)
         this.closeSelectCustom()
+        this.onChangeFunction(value)
       })
 
       elOption.addEventListener('mouseenter', (e) => {
@@ -227,7 +230,7 @@ export class Select {
    *
    * @returns {Select[]}
    */
-  static create(element) {
-    return new Select(element)
+  static create(element, onChangeFunction) {
+    return new Select(element, onChangeFunction)
   }
 }

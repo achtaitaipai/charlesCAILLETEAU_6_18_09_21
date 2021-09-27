@@ -25,9 +25,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem 0.3125rem;
   }
   &__tag {
-    margin: 0 0.3125rem 0.3125rem 0;
+    // margin: 0 0.3125rem 0.3125rem 0;
     a {
       @include tag;
       transition: color 0.3s, background-color 0.3s;

@@ -4,122 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.scss" />
     <title>Fisheye</title>
   </head>
   <body>
     <header class="header">
-      <a href="#" class="header__logo"
+      <a href="index.html" class="header__logo"
         ><img src="./assets/images/logo.svg" alt=""
       /></a>
       <nav class="nav">
         <ul class="nav__tagsList">
-          <li class="nav__tag"><a href="#" class="nav__lien">#Portrait</a></li>
-          <li class="nav__tag"><a href="#" class="nav__lien">#Art</a></li>
-          <li class="nav__tag"><a href="#" class="nav__lien">#Fashion</a></li>
           <li class="nav__tag">
-            <a href="#" class="nav__lien">#Architecture</a>
+            <a href="?filter=portrait" class="nav__lien">#Portrait</a>
           </li>
-          <li class="nav__tag"><a href="#" class="nav__lien">#Travel</a></li>
-          <li class="nav__tag"><a href="#" class="nav__lien">#Sport</a></li>
-          <li class="nav__tag"><a href="#" class="nav__lien">#Animals</a></li>
-          <li class="nav__tag"><a href="#" class="nav__lien">#Events</a></li>
+          <li class="nav__tag">
+            <a href="?filter=art" class="nav__lien">#Art</a>
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=fashion" class="nav__lien">#Fashion</a>
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=architecture" class="nav__lien">#Architecture</a>
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=travel" class="nav__lien">#Travel</a>
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=sport" class="nav__lien">#Sport</a>
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=animals" class="nav__lien">#Animals</a>
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=events" class="nav__lien">#Events</a>
+          </li>
         </ul>
       </nav>
       <a href="#main" class="header__link">Passer au contenu</a>
     </header>
     <main class="main">
       <h1 class="main__title">Nos photographes</h1>
-      <div class="main__photographs">
-        <a href="#" class="photographerCard">
-          <div class="photographerCard__imgContainer">
-            <img
-              src="./assets/images/MimiKeel.jpg"
-              alt=""
-              class="photographerCard__img"
-            />
-          </div>
-          <h2 class="photographerCard__title">Mimmi Keel</h2>
-          <div class="photographerCard__infos">
-            <p class="photographerCard__location">London</p>
-            <p class="photographerCard__slogan">
-              Voir le beau dans le quotidien
-            </p>
-            <p class="photographerCard__tarif">400€/jour</p>
-          </div>
-          <ul class="photographerCard__tags">
-            <li class="photographerCard__tag">#Art</li>
-            <li class="photographerCard__tag">#Events</li>
-          </ul>
-        </a>
-
-        <a href="#" class="photographerCard">
-          <div class="photographerCard__imgContainer">
-            <img
-              src="./assets/images/MimiKeel.jpg"
-              alt=""
-              class="photographerCard__img"
-            />
-          </div>
-          <h2 class="photographerCard__title">Mimmi Keel</h2>
-          <div class="photographerCard__infos">
-            <p class="photographerCard__location">London</p>
-            <p class="photographerCard__slogan">
-              Voir le beau dans le quotidien
-            </p>
-            <p class="photographerCard__tarif">400€/jour</p>
-          </div>
-          <ul class="photographerCard__tags">
-            <li class="photographerCard__tag">#Art</li>
-            <li class="photographerCard__tag">#Events</li>
-          </ul>
-        </a>
-
-        <a href="#" class="photographerCard">
-          <div class="photographerCard__imgContainer">
-            <img
-              src="./assets/images/MimiKeel.jpg"
-              alt=""
-              class="photographerCard__img"
-            />
-          </div>
-          <h2 class="photographerCard__title">Mimmi Keel</h2>
-          <div class="photographerCard__infos">
-            <p class="photographerCard__location">London</p>
-            <p class="photographerCard__slogan">
-              Voir le beau dans le quotidien
-            </p>
-            <p class="photographerCard__tarif">400€/jour</p>
-          </div>
-          <ul class="photographerCard__tags">
-            <li class="photographerCard__tag">#Art</li>
-            <li class="photographerCard__tag">#Events</li>
-          </ul>
-        </a>
-
-        <a href="#" class="photographerCard">
-          <div class="photographerCard__imgContainer">
-            <img
-              src="./assets/images/MimiKeel.jpg"
-              alt=""
-              class="photographerCard__img"
-            />
-          </div>
-          <h2 class="photographerCard__title">Mimmi Keel</h2>
-          <div class="photographerCard__infos">
-            <p class="photographerCard__location">London</p>
-            <p class="photographerCard__slogan">
-              Voir le beau dans le quotidien
-            </p>
-            <p class="photographerCard__tarif">400€/jour</p>
-          </div>
-          <ul class="photographerCard__tags">
-            <li class="photographerCard__tag">#Art</li>
-            <li class="photographerCard__tag">#Events</li>
-          </ul>
-        </a>
-      </div>
+      <div class="main__photographers"></div>
     </main>
-    <script src="./assets/js/index.js" type="module"></script>
   </body>
 </html>

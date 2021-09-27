@@ -1,3 +1,20 @@
+/**
+ *
+ * @param {string} name -- nom de la valeur à rechercher dans l'url
+ * @returns {string} value
+ */
+export function getUrlValue(name) {
+  const parsedUrl = new URL(window.location.href)
+  return parsedUrl.searchParams.get(name)
+}
+
+export function importAll(r) {
+  const images = {}
+  r.keys().forEach((item, index) => {
+    images[item.replace('./', '')] = r(item)
+  })
+  return images
+}
 export function createComplexElement(arr) {
   const newArr = []
   arr.forEach((obj) => {
@@ -14,7 +31,7 @@ export function createComplexElement(arr) {
   return newArr.find((el) => el.parent === 'main').DOMelement
 }
 
-function createElementFromObject(obj) {
+export function createElementFromObject(obj) {
   const el = document.createElement(obj.type) || document.createElement('div')
   el.className = obj.class || ''
   const attributes = obj.attributes || []

@@ -6,6 +6,9 @@
   width: 86%;
   margin: auto;
   padding: 4rem 3.125rem 4rem 2rem;
+  &__infos {
+    max-width: 50%;
+  }
   &__title {
     font-size: 4rem;
     line-height: 1;
@@ -30,13 +33,15 @@
   &__lien {
     @include tag;
     transition: color 0.3s, background-color 0.3s;
-    &:hover,&:focus {
+    &:hover,
+    &:focus {
       background: $primary-1;
       color: white;
     }
   }
   &__contact {
     @include btn;
+    z-index: 10;
   }
   &__imgContainer {
     width: 200px;
@@ -78,6 +83,9 @@
     width: 100%;
     padding: 4rem 1.25rem 4rem 1.25rem;
     background: transparent;
+    &__infos {
+      max-width: 75%;
+    }
     &__imgContainer {
       position: absolute;
       right: 5vw;

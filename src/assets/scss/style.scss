@@ -1,0 +1,16 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'bases/bases';
+@import 'blocs/header';
+@import 'blocs/main';
+@import 'blocs/photographerCard';
+
+@import 'blocs/mainPhotographer';
+@import 'blocs/photographerIdentity';
+@import 'blocs/select';
+@import 'blocs/mediaCard';
+@import 'blocs/dialog';
+@import 'blocs/carousel';
+body {
+  font-family: 'DM Sans', sans-serif;
+}

@@ -10,6 +10,7 @@
   opacity: 0;
   transform: translate3d(0, -2rem, 0);
   pointer-events: none;
+  z-index: 20;
   transition: transform 0.3s, opacity 0.3s;
   &.visible {
     transform: translate3d(0, 0, 0);

@@ -5,42 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.scss" />
   </head>
   <body>
     <header class="header">
-      <a href="#" class="header__logo"
+      <a href="index.html" class="header__logo"
         ><img src="./assets/images/logo.svg" alt=""
       /></a>
     </header>
     <main class="mainPhotographer">
-      <section class="photographerIdentity">
-        <div class="photographerIdentity__infos">
-          <h2 class="photographerIdentity__title">Mimi Keel</h2>
-          <div class="photographerIdentity__text">
-            <p class="photographerIdentity__location">London</p>
-            <p class="photographerIdentity__slogan">
-              Voir le beau dans le quotidien
-            </p>
-          </div>
-          <ul class="photographerIdentity__tagsList">
-            <li>
-              <a href="#" class="photographerIdentity__lien">#portrait</a>
-            </li>
-            <li><a href="#" class="photographerIdentity__lien">#events</a></li>
-            <li><a href="#" class="photographerIdentity__lien">#travel</a></li>
-            <li><a href="#" class="photographerIdentity__lien">#fashion</a></li>
-          </ul>
-        </div>
-        <button class="photographerIdentity__contact">Contactez-moi</button>
-        <div class="photographerIdentity__imgContainer">
-          <img
-            src="./assets/images/MimiKeel.jpg"
-            alt=""
-            class="photographerIdentity__img"
-          />
-        </div>
-      </section>
       <section class="medias">
         <div class="selectStyled">
           <label class="selectLabel" id="sortBy">Trier par</label>
@@ -50,74 +22,9 @@
             <option value="title">Titre</option>
           </select>
         </div>
-        <div class="medias__container">
-          <a href="#" class="mediaCard">
-            <div class="mediaCard__imgContainer">
-              <img
-                src="./assets/images/Architecture_Connected_Curves.jpg"
-                alt=""
-                class="mediaCard__media"
-              />
-            </div>
-            <div class="mediaCard__infos">
-              <h3 class="mediaCard__title">Arc-en-ciel</h3>
-              <div class="mediaCard__likes">
-                12 <span class="mediaCard__heart">&#9829;</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="mediaCard">
-            <div class="mediaCard__imgContainer">
-              <video class="mediaCard__media">
-                <source
-                  src="./assets/images/Sport_Tricks_in_the_air.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-            <div class="mediaCard__infos">
-              <h3 class="mediaCard__title">Arc-en-ciel</h3>
-              <div class="mediaCard__likes">
-                12 <span class="mediaCard__heart">&#9829;</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="mediaCard">
-            <div class="mediaCard__imgContainer">
-              <img
-                src="./assets/images/Architecture_Connected_Curves.jpg"
-                alt=""
-                class="mediaCard__media"
-              />
-            </div>
-            <div class="mediaCard__infos">
-              <h3 class="mediaCard__title">Arc-en-ciel</h3>
-              <div class="mediaCard__likes">
-                12 <span class="mediaCard__heart">&#9829;</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="mediaCard">
-            <div class="mediaCard__imgContainer">
-              <img
-                src="./assets/images/Architecture_Connected_Curves.jpg"
-                alt=""
-                class="mediaCard__media"
-              />
-            </div>
-            <div class="mediaCard__infos">
-              <h3 class="mediaCard__title">Arc-en-ciel</h3>
-              <div class="mediaCard__likes">
-                12 <span class="mediaCard__heart">&#9829;</span>
-              </div>
-            </div>
-          </a>
-        </div>
+        <div class="mediasContainer"></div>
       </section>
-      <section class="dialog">
+      <section class="dialog preload">
         <form action="post" class="dialogForm">
           <h1 class="dialogForm__title">Contactez-moi<br />Mimi Keel</h1>
           <label for="firstName" class="dialogForm__label">Prénom</label>
@@ -154,46 +61,9 @@
           </button>
         </form>
       </section>
-      <section class="carousel">
+      <section class="carousel preload">
         <div class="carousel__container">
-          <ol class="carousel__frame">
-            <li class="carousel__item">
-              <img
-                src="./assets/images/Architecture_Connected_Curves.jpg"
-                alt=""
-                class="carousel__media"
-              />
-            </li>
-            <li class="carousel__item">
-              <video class="carousel__media" controls>
-                <source
-                  src="./assets/images/Sport_Tricks_in_the_air.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </li>
-            <li class="carousel__item">
-              <img
-                src="./assets/images/Architecture_White_Light.jpg"
-                alt=""
-                class="carousel__media"
-              />
-            </li>
-            <li class="carousel__item">
-              <img
-                src="./assets/images/Sport_Jump.jpg"
-                alt=""
-                class="carousel__media"
-              />
-            </li>
-            <li class="carousel__item">
-              <img
-                src="./assets/images/Sport_Race_End.jpg"
-                alt=""
-                class="carousel__media"
-              />
-            </li>
-          </ol>
+          <ol class="carousel__frame"></ol>
           <p class="carousel__legend">truc bidule</p>
           <a href="#" class="carousel__prev">&#60;</a>
           <a href="#" class="carousel__next">&#62;</a>

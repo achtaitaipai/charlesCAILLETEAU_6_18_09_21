@@ -21,7 +21,7 @@ export class Carousel {
         el.style.transform = 'translate3D(0%,0,0)'
       }
     }
-    this.legend.innerHTML = this.index
+    this.legend.innerHTML = this.items[this.index].getAttribute('data-legend')
 
     this.nextMedia = this.nextMedia.bind(this)
     this.next.addEventListener('click', this.nextMedia, event, 2)
@@ -51,17 +51,13 @@ export class Carousel {
     this.items[this.index].style.animation = '.3s ease-in 0s both 1 toLeft'
     this.index = (this.index + 1) % this.items.length
     this.items[this.index].style.animation = '.3s ease-in 0s both 1 fromRight'
-    this.legend.innerHTML = this.index
+    this.legend.innerHTML = this.items[this.index].getAttribute('data-legend')
   }
 
   previousMedia() {
     this.items[this.index].style.animation = '.3s ease-in 0s both 1 toRight'
     this.index = this.index > 0 ? this.index - 1 : this.items.length - 1
     this.items[this.index].style.animation = '.3s ease-in 0s both 1 fromLeft'
-    this.legend.innerHTML = this.index
-  }
-
-  static create(element) {
-    return new Carousel(element)
+    this.legend.innerHTML = this.items[this.index].getAttribute('data-legend')
   }
 }

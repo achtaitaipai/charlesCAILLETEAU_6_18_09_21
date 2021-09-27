@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.js',
-    photographer: './src/photographer.js',
+    index: './src/assets/js/index.js',
+    photographers: './src/assets/js/photographers.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -26,7 +26,7 @@ module.exports = {
       // Also generate a test.html
       filename: 'photographer.html',
       template: 'src/photographer.html',
-      chunks: ['photographer'],
+      chunks: ['photographers'],
     }),
   ],
   module: {
