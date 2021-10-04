@@ -12,6 +12,10 @@
       height: 100%;
     }
   }
+  &__logo:focus img,
+  &__logo:hover img {
+    filter: drop-shadow(2px 2px 0px black);
+  }
 
   &__hiddenlink {
     position: absolute;
@@ -23,7 +27,7 @@
     font-weight: 700;
     padding: 0.3rem 0.5rem;
     border-radius: 0.3125rem;
-    &:focus{
+    &:focus {
       top: 0.5rem;
     }
   }

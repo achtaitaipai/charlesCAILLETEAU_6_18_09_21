@@ -143,7 +143,7 @@ export class Media {
       {
         name: 'likes',
         class: 'mediaCard__likes',
-        type: 'i',
+        type: 'em',
         parent: 'infos',
         content: this.likes + ' ',
         attributes: {
@@ -211,6 +211,7 @@ class Photo {
       class: 'carousel__media',
       attributes: {
         src: `./assets/images/${obj.image}`,
+        alt: '',
       },
     }
   }

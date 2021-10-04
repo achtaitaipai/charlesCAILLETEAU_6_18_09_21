@@ -44,6 +44,7 @@
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
+    box-shadow: 0 4px 12px 0 #00000040;
   }
   &__img {
     object-fit: cover;

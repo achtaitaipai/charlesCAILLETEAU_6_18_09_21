@@ -42,9 +42,9 @@
     border: 0;
   }
   &__input:invalid {
-    box-shadow: 0 0px 2px 3px red;
+    // box-shadow: 0 0px 2px 3px red;
   }
-  
+
   &__input:focus:invalid {
     outline: none;
   }

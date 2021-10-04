@@ -11,10 +11,10 @@ import { ContactDialog } from './contactDialog.js'
 importAll(require.context('../images/', false, /\.(mp4)$/))
 /* Déclaration des variables
  */
+const Id = parseInt(getUrlValue('id'))
+if (isNaN(Id)) window.location.href = 'index.html'
 // récupérer l'objet photographe correspondant à l'id passé dans l'url
-const photographerData = Data.photographers.find(
-  (el) => el.id === parseInt(getUrlValue('id'))
-)
+const photographerData = Data.photographers.find((el) => el.id === Id)
 // créé un nouveau photographe ainsi que son élément 'identity' puis l'insérer
 const photographer = new Photographer(photographerData)
 const main = document.querySelector('.mainPhotographer')

@@ -9,14 +9,22 @@
   <body>
     <header class="header">
       <a href="index.html" class="header__logo"
-        ><img src="./assets/images/logo.svg" alt="Logo Fisheye - Page d'accueil"
+        ><img
+          src="./assets/images/logo.svg"
+          alt="Logo Fisheye - Page d'accueil"
       /></a>
     </header>
     <main class="mainPhotographer">
       <section class="medias">
         <div class="selectStyled">
-          <label class="selectLabel" id="sortBy">Trier par</label>
-          <select class="selectNative js-selectNative" aria-labelledby="sortBy">
+          <label class="selectLabel" id="sortBy" for="selectOrder"
+            >Trier par</label
+          >
+          <select
+            class="selectNative js-selectNative"
+            aria-labelledby="sortBy"
+            id="selectOrder"
+          >
             <option value="popularity">Popularité</option>
             <option value="date">Date</option>
             <option value="title">Titre</option>
@@ -25,10 +33,20 @@
         <div class="mediasContainer"></div>
       </section>
     </main>
-    <section class="dialog preload" role="dialog" aria-labelledby="contactez-moi" tabindex="-1" aria-hidden="true">
+    <section
+      class="dialog preload"
+      role="dialog"
+      aria-labelledby="contactez-moi"
+      tabindex="-1"
+      aria-hidden="true"
+    >
       <form action="post" class="dialogForm">
-        <h1 class="dialogForm__title" id="contactez-moi">Contactez-moi<br />Mimi Keel</h1>
-        <label for="firstName" class="dialogForm__label" id="label-prenom">Prénom</label>
+        <h1 class="dialogForm__title" id="contactez-moi">
+          Contactez-moi<br />Mimi Keel
+        </h1>
+        <label for="firstName" class="dialogForm__label" id="label-prenom"
+          >Prénom</label
+        >
         <input
           type="text"
           id="firstName"
@@ -39,7 +57,9 @@
           required
           aria-required="true"
         />
-        <label for="lastName" class="dialogForm__label" id="label-nom">Nom</label>
+        <label for="lastName" class="dialogForm__label" id="label-nom"
+          >Nom</label
+        >
         <input
           type="text"
           id="lastName"
@@ -50,9 +70,21 @@
           required
           aria-required="true"
         />
-        <label for="email" id="label-email" class="dialogForm__label">Email</label>
-        <input type="email" id="email" name="email" class="dialogForm__input" required aria-required="true" aria-labelledby="label-email" />
-        <label for="message" id="label-message" class="dialogForm__label">Votre message</label>
+        <label for="email" id="label-email" class="dialogForm__label"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="dialogForm__input"
+          required
+          aria-required="true"
+          aria-labelledby="label-email"
+        />
+        <label for="message" id="label-message" class="dialogForm__label"
+          >Votre message</label
+        >
         <textarea
           name="message"
           id="message"
@@ -62,9 +94,14 @@
           required
           aria-required="true"
         ></textarea>
-        <input type="submit" value="Envoyer" class="dialogForm__submit" aria-label="envoyer"/>
+        <input
+          type="submit"
+          value="Envoyer"
+          class="dialogForm__submit"
+          aria-label="envoyer"
+        />
         <button class="dialogForm__close" aria-label="fermer le formulaire">
-          <img src="./assets/images/close.svg" alt="" aria-hidden="true"/>
+          <img src="./assets/images/close.svg" alt="" aria-hidden="true" />
         </button>
       </form>
     </section>
@@ -72,10 +109,14 @@
       <div class="carousel__container">
         <ol class="carousel__frame"></ol>
         <p class="carousel__legend">truc bidule</p>
-        <a href="#" class="carousel__prev" aria-label="image précédente"><span aria-hidden="true">&#60;</span></a>
-        <a href="#" class="carousel__next" aria-label="image suivante"><span aria-hidden="true">&#62;</span></a>
+        <a href="#" class="carousel__prev" aria-label="image précédente"
+          ><span aria-hidden="true">&#60;</span></a
+        >
+        <a href="#" class="carousel__next" aria-label="image suivante"
+          ><span aria-hidden="true">&#62;</span></a
+        >
         <button class="carousel__close" aria-label="fermer la fenêtre">
-          <img src="./assets/images/close.svg" alt="" aria-hidden="true"/>
+          <img src="./assets/images/close.svg" alt="" aria-hidden="true" />
         </button>
       </div>
     </section>

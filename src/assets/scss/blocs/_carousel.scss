@@ -57,9 +57,17 @@
   }
   &__prev {
     grid-area: prev;
+    &:hover,
+    &:focus {
+      color: $primary-2;
+    }
   }
   &__next {
     grid-area: next;
+    &:hover,
+    &:focus {
+      color: $primary-2;
+    }
   }
   &__close {
     grid-area: close;
@@ -74,6 +82,14 @@
     height: 3rem;
     img {
       height: 2rem;
+    }
+    &:hover img,
+    &:focus img {
+      filter: invert(42%) sepia(73%) saturate(690%) hue-rotate(327deg)
+        brightness(88%) contrast(88%);
+    }
+    &:focus {
+      outline: 2px solid black;
     }
   }
   &__item {
