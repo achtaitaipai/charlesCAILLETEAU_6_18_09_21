@@ -13,8 +13,19 @@
     }
   }
 
-  &__link {
-    display: none;
+  &__hiddenlink {
+    position: absolute;
+    top: -1000px;
+    left: 50%;
+    background: $secondary-4;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3125rem;
+    &:focus{
+      top: 0.5rem;
+    }
   }
 }
 .nav {

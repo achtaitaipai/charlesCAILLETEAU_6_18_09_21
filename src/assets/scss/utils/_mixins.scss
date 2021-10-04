@@ -5,7 +5,8 @@
   color: $primary-1;
   font-weight: 500;
   transition: color 0.3s, background-color 0.3s;
-  &:hover {
+  &:hover,
+  &:focus {
     background: $primary-1;
     color: white;
   }

@@ -5,41 +5,32 @@ import { Carousel } from './carousel'
 import { Photographer } from './photographer'
 import { Media } from './media'
 import { getUrlValue, importAll } from './utils'
+import { ContactDialog } from './contactDialog.js'
 
 // importer les images
 importAll(require.context('../images/', false, /\.(mp4)$/))
-
+/* Déclaration des variables
+ */
 // récupérer l'objet photographe correspondant à l'id passé dans l'url
 const photographerData = Data.photographers.find(
   (el) => el.id === parseInt(getUrlValue('id'))
 )
-
 // créé un nouveau photographe ainsi que son élément 'identity' puis l'insérer
 const photographer = new Photographer(photographerData)
 const main = document.querySelector('.mainPhotographer')
+
+// récupérer les objet medias qui correspondent à l'id passé dans l'url
+const mediaData = Data.media.filter(
+  (el) => el.photographerId === parseInt(getUrlValue('id'))
+)
 main.insertBefore(
   photographer.identitySection(),
   document.querySelector('.medias')
 )
 
-// gestion des fenetre contact et carousel
-const contact = document.getElementsByClassName(
-  'photographerIdentity__contact'
-)[0]
-const closeModal = document.getElementsByClassName('dialogForm__close')[0]
-const dialog = document.getElementsByClassName('dialog')[0]
-
-contact.addEventListener('click', () => {
-  dialog.classList.toggle('visible')
-})
-
-closeModal.addEventListener('click', (e) => {
-  dialog.classList.toggle('visible')
-  e.preventDefault()
-})
-
-const carousel = new Carousel(document.querySelector('.carousel'))
-
+document.title = 'Fisheye - ' + photographer.name
+// eslint-disable-next-line no-unused-vars
+const dialog = new ContactDialog()
 // au chargement activé les animations
 // https://css-tricks.com/transitions-only-after-page-load/
 window.addEventListener('load', () => {
@@ -48,24 +39,11 @@ window.addEventListener('load', () => {
     anims[0].classList.remove('preload')
   }
 })
-// récupérer les objet medias qui correspondent à l'id passé dans l'url
-const mediaData = Data.media.filter(
-  (el) => el.photographerId === parseInt(getUrlValue('id'))
-)
 
-// trie les éléments par popularité (nb de like)
-mediaData.sort((a, b) => {
-  if (a.likes < b.likes) {
-    return 1
-  }
-  if (a.likes > b.likes) {
-    return -1
-  }
-  return 0
-})
 const medias = []
 mediaData.forEach((data) => {
-  const media = new Media(data, function () {
+  const media = new Media(data, function (e) {
+    e.preventDefault()
     document.querySelector(
       '.photographerIdentity__likes'
     ).textContent = `${Media.getLikes(medias)} ♥`
@@ -92,3 +70,5 @@ Select.create(document.querySelector('.selectStyled'), (value) =>
 document.querySelector(
   '.photographerIdentity__likes'
 ).textContent = `${Media.getLikes(medias)} ♥`
+
+const carousel = new Carousel(document.querySelector('.carousel'))

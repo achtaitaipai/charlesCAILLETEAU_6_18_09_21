@@ -32,12 +32,6 @@
   }
   &__lien {
     @include tag;
-    transition: color 0.3s, background-color 0.3s;
-    &:hover,
-    &:focus {
-      background: $primary-1;
-      color: white;
-    }
   }
   &__contact {
     @include btn;

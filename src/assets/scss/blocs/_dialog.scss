@@ -36,12 +36,17 @@
   &__input {
     display: block;
     font-size: 2.25rem;
-  }
-  &__input {
     border-radius: 0.3125rem;
     width: 100%;
     outline: 0;
     border: 0;
+  }
+  &__input:invalid {
+    box-shadow: 0 0px 2px 3px red;
+  }
+  
+  &__input:focus:invalid {
+    outline: none;
   }
   &__submit {
     @include btn;
@@ -49,6 +54,7 @@
     margin: 1.625rem 0 1rem 0;
   }
   &__close {
+    display: grid;
     position: absolute;
     top: 2rem;
     right: 2.1875rem;

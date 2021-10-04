@@ -39,6 +39,8 @@
   &__legend {
     grid-area: legend;
     place-self: center flex-start;
+    font-size: 1.5rem;
+    color: $primary-1;
   }
   &__prev,
   &__next {
@@ -48,7 +50,7 @@
     display: grid;
     place-items: center;
     font-size: 4rem;
-    color: #911c1c;
+    color: $primary-1;
     font-weight: 700;
 
     text-decoration: none;
@@ -61,6 +63,8 @@
   }
   &__close {
     grid-area: close;
+    display: grid;
+    place-items: center;
     z-index: 2;
     background: none;
     border: 0;
@@ -84,36 +88,19 @@
     max-height: 100%;
   }
 }
-@keyframes fromLeft {
+@keyframes vanish {
   0% {
-    transform: translate3D(-100%, 0, 0);
+    opacity: 100%;
   }
   100% {
-    transform: translate3D(0%, 0, 0);
+    opacity: 0%;
   }
 }
-
-@keyframes fromRight {
+@keyframes emerge {
   0% {
-    transform: translate3D(100%, 0, 0);
+    opacity: 0%;
   }
   100% {
-    transform: translate3D(0%, 0, 0);
-  }
-}
-@keyframes toRight {
-  0% {
-    transform: translate3D(0%, 0, 0);
-  }
-  100% {
-    transform: translate3D(100%, 0, 0);
-  }
-}
-@keyframes toLeft {
-  0% {
-    transform: translate3D(0%, 0, 0);
-  }
-  100% {
-    transform: translate3D(-100%, 0, 0);
+    opacity: 100%;
   }
 }

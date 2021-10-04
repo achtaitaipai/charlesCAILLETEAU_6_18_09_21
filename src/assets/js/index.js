@@ -11,9 +11,14 @@ let photographers = Data.photographers
 
 // si un filtre est passé dans l'url => filtrer les photographes
 if (filter !== null) {
-  photographers = photographers.filter((photographer) =>
-    photographer.tags.includes(filter)
-  )
+  document.title = 'Fisheye - ' + filter
+  photographers = photographers.filter((photographer) => {
+    return photographer.tags.includes(filter)
+  })
+  const tags = document.querySelectorAll('.nav__tag')
+  const arrTags = Array.prototype.slice.call(tags)
+  const currentTag = arrTags.find((t) => t.innerHTML.includes(filter))
+  currentTag.remove()
 }
 
 photographers.forEach((el) => {

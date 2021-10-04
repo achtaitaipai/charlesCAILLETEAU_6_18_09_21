@@ -4,8 +4,8 @@ source : https://css-tricks.com/striking-a-balance-between-native-and-custom-sel
 */
 export class Select {
   /**
-   *
    * @param {HTMLElement} element
+   * @param {function} onChangeFunction - fonction appelée lorsque la valeur du Select est modifiée
    */
   constructor(element, onChangeFunction) {
     this.element = element
@@ -69,6 +69,9 @@ export class Select {
     })
   }
 
+  /**
+   *Création du pseudo-sélect
+   */
   createSelectClone() {
     const obj = [
       {
@@ -115,6 +118,9 @@ export class Select {
     )
   }
 
+  /**
+   * Ouvril le pseudo-sélect
+   */
   openSelectCustom() {
     this.elSelectCustom.classList.add('isActive')
     // Remove aria-hidden in case this was opened by a user
@@ -135,6 +141,9 @@ export class Select {
     document.addEventListener('keydown', this.supportKeyboardNavigation)
   }
 
+  /**
+   * Fermer le pseudo-sélect
+   */
   closeSelectCustom() {
     this.elSelectCustom.classList.remove('isActive')
 
@@ -147,6 +156,10 @@ export class Select {
     document.removeEventListener('keydown', this.supportKeyboardNavigation)
   }
 
+  /**
+   *Gestion des hover dans le pseudo-sélect
+   * @param {number} newIndex - index de l'émément survolé par la souris
+   */
   updateCustomSelectHovered(newIndex) {
     const prevOption = this.elSelectCustomOpts.children[this.optionHoveredIndex]
     const option = this.elSelectCustomOpts.children[newIndex]
@@ -161,6 +174,11 @@ export class Select {
     this.optionHoveredIndex = newIndex
   }
 
+  /**
+   *Gestion de la sélection d'un nouvel élément
+   * @param {string} value - valeur de lélément sélectioonnée
+   * @param {string} text - nom de l'élément sélectionné
+   */
   updateCustomSelectChecked(value, text) {
     const prevValue = this.optionChecked
 
@@ -183,31 +201,36 @@ export class Select {
     this.optionChecked = value
   }
 
+  /**
+   * Lorsque l'utilisateur clique en dehors du sélect
+   *  @param  {document#event:click} e
+   */
   watchClickOutside(e) {
-    const didClickedOutside = !this.elSelectCustom.contains(event.target)
+    const didClickedOutside = !this.elSelectCustom.contains(e.target)
     if (didClickedOutside) {
       this.closeSelectCustom()
     }
   }
 
+  /**
+   * Gestions des évènements clavier : fleche bas/haut, espace/entrée, échap
+   * @param {document#event:keydown} e
+   */
   supportKeyboardNavigation(e) {
     // press down -> go next
-    if (
-      event.keyCode === 40 &&
-      this.optionHoveredIndex < this.optionsCount - 1
-    ) {
+    if (e.code === 40 && this.optionHoveredIndex < this.optionsCount - 1) {
       e.preventDefault() // prevent page scrolling
       this.updateCustomSelectHovered(this.optionHoveredIndex + 1)
     }
 
     // press up -> go previous
-    if (event.keyCode === 38 && this.optionHoveredIndex > 0) {
+    if (e.code === 38 && this.optionHoveredIndex > 0) {
       e.preventDefault() // prevent page scrolling
       this.updateCustomSelectHovered(this.optionHoveredIndex - 1)
     }
 
     // press Enter or space -> select the option
-    if (event.keyCode === 13 || event.keyCode === 32) {
+    if (e.code === 13 || e.code === 32) {
       e.preventDefault()
 
       const option = this.elSelectCustomOpts.children[this.optionHoveredIndex]
@@ -221,14 +244,16 @@ export class Select {
     }
 
     // press ESC -> close selectCustom
-    if (event.keyCode === 27) {
+    if (e.code === 27) {
       this.closeSelectCustom()
     }
   }
 
   /**
    *
-   * @returns {Select[]}
+   * @param {htmlElement} element
+   * @param {function} onChangeFunction - fonction appelée lorsque la valeur du Select est modifiée
+   * @returns {Select}
    */
   static create(element, onChangeFunction) {
     return new Select(element, onChangeFunction)

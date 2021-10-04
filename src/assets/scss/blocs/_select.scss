@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 .selectStyled {
   width: 86%;
   margin: 0.5rem auto 0 auto;
-  @media(max-width:800px){
+  @media (max-width: 800px) {
     display: none;
   }
   // Both native and custom selects must have the same width/height.
@@ -40,9 +39,9 @@
   }
 
   /* Add the focus states too, They matter, always! */
-  .selectNative:focus {
-    box-shadow: $primary-2 0 0 0 2px;
-  }
+  // .selectNative:focus {
+  //   box-shadow: $primary-2 0 0 0 2px;
+  // }
 
   //
   // Rest of the styles to create the custom select.
@@ -95,19 +94,18 @@
     padding: 0 0.8rem;
     line-height: 3rem;
     cursor: pointer;
-    transition: color .3s, background-color .3s;
+    transition: color 0.3s, background-color 0.3s;
   }
 
   .selectCustom-trigger::after {
-    content: "˄";
+    content: '˄';
     position: absolute;
     top: 0;
     right: 0.8rem;
   }
   .selectCustom.isActive .selectCustom-trigger::after {
-    content: "˅";
+    content: '˅';
   }
-
 
   .selectCustom-trigger:hover {
     background: $primary-2;
@@ -133,7 +131,7 @@
     background: $primary-1;
     color: white;
     cursor: pointer;
-    transition:color .3s, background-color .3s;
+    transition: color 0.3s, background-color 0.3s;
   }
   .selectCustom-option:last-of-type {
     border-radius: 0 0 0.4rem 0.4rem;
@@ -146,7 +144,7 @@
   }
 
   .selectCustom-option:not(:last-of-type)::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -156,7 +154,7 @@
   }
 
   .selectCustom-option.isActive::before {
-    content: "✓";
+    content: '✓';
     position: absolute;
     left: 0.8rem;
   }

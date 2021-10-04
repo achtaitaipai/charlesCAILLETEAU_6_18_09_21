@@ -1,6 +1,21 @@
 import { createComplexElement, createElementFromObject } from './utils'
 
 export class Media {
+  /**
+   *
+   * @param {Object} obj
+   * @param {Date} obj.date
+   * @param {number} obj.id
+   * @param {string=} obj.image - url de l'image
+   * @param {string=} obj.video - url de la video
+   * @param {number} obj.likes
+   * @param {number} obj.photographerId
+   * @param {number} obj.price
+   * @param {Array.<string>} obj.tags
+   * @param {string} obj.title
+   * @param {string} obj.alt
+   * @param {function} refreshTotalLikes
+   */
   constructor(obj, refreshTotalLikes) {
     this.refreshTotalLikes = refreshTotalLikes
     this.title = obj.title
@@ -19,16 +34,22 @@ export class Media {
     this.likesEl.addEventListener('click', this.onLikeClick)
   }
 
-  onLikeClick() {
+  /**
+   * Lorsque le bouton like est cliqué
+   */
+  onLikeClick(e) {
     this.likes++
     this.likesEl.textContent = this.likesEl.textContent.replace(
       this.likes - 1,
       this.likes
     )
-    this.refreshTotalLikes()
+    this.refreshTotalLikes(e)
     this.likesEl.removeEventListener('click', this.onLikeClick)
   }
 
+  /**
+   * Ajout du média à la liste des medias et au carousel
+   */
   appendElements() {
     document.querySelector('.mediasContainer').append(this.cardElement)
     document.querySelector('.carousel__frame').append(this.carouselItemElement)
@@ -42,6 +63,11 @@ export class Media {
     return likes
   }
 
+  /**
+   * Trie les éléments médias
+   * @param {('popularity'|'date'|'title')} typeOfSort
+   * @param {Array.<Media>} medias
+   */
   static sort(typeOfSort, medias) {
     switch (typeOfSort) {
       case 'popularity':
@@ -79,6 +105,10 @@ export class Media {
     })
   }
 
+  /**
+   *
+   * @returns {Array.<Object>} MediaCardObj
+   */
   createCard() {
     const mediaCardObj = [
       {
@@ -94,7 +124,7 @@ export class Media {
         parent: 'root',
         attributes: {
           href: '#',
-          title: 'à remplir',
+          title: this.alt + ', afficher en grand.',
         },
       },
       {
@@ -113,9 +143,13 @@ export class Media {
       {
         name: 'likes',
         class: 'mediaCard__likes',
-        type: 'div',
+        type: 'i',
         parent: 'infos',
         content: this.likes + ' ',
+        attributes: {
+          tabindex: 0,
+          ariaLabel: 'likes',
+        },
       },
       {
         name: 'heart',
@@ -129,6 +163,10 @@ export class Media {
     return createComplexElement(mediaCardObj)
   }
 
+  /**
+   *
+   * @returns {Array.<Object>} carouselItemObj
+   */
   createCarouselItem() {
     const carouselItemObj = {
       type: 'li',
@@ -144,6 +182,20 @@ export class Media {
 }
 
 class Photo {
+  /**
+   *
+   * @param {Object} obj
+   * @param {Date} obj.date
+   * @param {number} obj.id
+   * @param {string=} obj.image - url de l'image
+   * @param {string=} obj.video - url de la video
+   * @param {number} obj.likes
+   * @param {number} obj.photographerId
+   * @param {number} obj.price
+   * @param {Array.<string>} obj.tags
+   * @param {string} obj.title
+   * @param {string} obj.alt
+   */
   constructor(obj) {
     this.mediaCardObj = {
       type: 'img',
@@ -159,13 +211,26 @@ class Photo {
       class: 'carousel__media',
       attributes: {
         src: `./assets/images/${obj.image}`,
-        alt: obj.title,
       },
     }
   }
 }
 
 class Video {
+  /**
+   *
+   * @param {Object} obj
+   * @param {Date} obj.date
+   * @param {number} obj.id
+   * @param {string=} obj.image - url de l'image
+   * @param {string=} obj.video - url de la video
+   * @param {number} obj.likes
+   * @param {number} obj.photographerId
+   * @param {number} obj.price
+   * @param {Array.<string>} obj.tags
+   * @param {string} obj.title
+   * @param {string} obj.alt
+   */
   constructor(obj) {
     this.mediaCardObj = {
       type: 'video',

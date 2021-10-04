@@ -1,5 +1,18 @@
 import { createComplexElement } from './utils'
+
 export class Photographer {
+  /**
+   *
+   * @param {Object} data
+   * @param {number} data.id
+   * @param {string} data.portrait
+   * @param {string} data.name
+   * @param {string} data.coutry
+   * @param {string} data.city
+   * @param {string} data.tagline
+   * @param {string} data.price
+   * @param {string} data.tags
+   */
   constructor(data) {
     this.id = data.id
     this.image = new Image()
@@ -107,10 +120,9 @@ export class Photographer {
         type: 'a',
         class: 'photographerIdentity__lien',
         parent: 'tagsList',
-        content: '#' + tag,
+        innerhtml: `<span class="sr-only">${tag} </span> <span aria-hidden="true">#${tag}</span>`,
         attributes: {
           href: 'index.html?filter=' + tag,
-          title: 'à remplir',
         },
       }
       el.push(tagEl)
@@ -126,7 +138,7 @@ export class Photographer {
     const el = [
       {
         name: 'root',
-        type: 'div',
+        type: 'article',
         class: 'photographerCard',
         parent: 'main',
       },
@@ -138,6 +150,7 @@ export class Photographer {
         attributes: {
           href: `photographer.html?id=${this.id}`,
           title: `découvrez le travail de ${this.name}`,
+          ariaLabel:this.name
         },
       },
       {
@@ -152,7 +165,7 @@ export class Photographer {
         class: 'photographerCard__img',
         attributes: {
           src: this.image.src,
-          alt: '',
+          alt:''
         },
         parent: 'imgContainer',
       },
@@ -204,15 +217,16 @@ export class Photographer {
         parent: 'tags',
       }
       el.push(tagLi)
+
       const tagA = {
-        name: 'tag',
+        name: tag+'link',
         type: 'a',
         class: 'photographerCard__tag',
         parent: tag,
-        content: '#' + tag,
+        innerhtml: `<span class="sr-only">${tag} </span> #<span aria-hidden="true"> ${tag}</span>`,
         attributes: {
           href: 'index.html?filter=' + tag,
-        },
+      },
       }
       el.push(tagA)
     })

@@ -6,11 +6,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+*:focus {
+  outline: 3px solid $primary-2 !important;
+}
 .preload {
   transition: none !important;
 }
 body {
   font-family: 'DM Sans', sans-serif;
+}
+.noScroll {
+  overflow: hidden;
 }
 
 ul {
@@ -19,4 +25,16 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
