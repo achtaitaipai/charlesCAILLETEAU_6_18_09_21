@@ -12,3 +12,5 @@ Avec votre cheffe Amanda et le Designer UI, vous venez de faire une réunion de 
 - Assurer l'accessibilité d'un site web
 - Ecrire du code JavaScript maintenable
 - Gérer les évènements d'un site avec JavaScript
+
+[Lien vers le site](https://achtaitaipai.github.io/charlesCAILLETEAU_6_18_09_21/index.html).
