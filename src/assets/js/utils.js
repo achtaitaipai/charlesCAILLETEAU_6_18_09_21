@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param {string} name -- nom de la valeur à rechercher dans l'url
  * @returns {string} value
  */
@@ -7,10 +7,17 @@ export function getUrlValue(name) {
   const parsedUrl = new URL(window.location.href)
   return parsedUrl.searchParams.get(name)
 }
+export function getUrlValues(name) {
+  const parsedUrl = new URL(window.location.href)
+  const retour = parsedUrl.searchParams.get(name)
+    ? parsedUrl.searchParams.get(name).split(',')
+    : null
+  return retour
+}
 
 /**
- * Importe une série de fichiers 
- * @param {function} r 
+ * Importe une série de fichiers
+ * @param {function} r
  * @returns {Array.<string>} images - Liens vers les fichiers
  */
 export function importAll(r) {
@@ -22,12 +29,12 @@ export function importAll(r) {
 }
 /**
  * Crée des éléments Html qui peuvent être liés entre eux à partir d'un tableau d'objet
- * @param {Object[]} arr 
- * @param {String} arr[].name 
- * @param {String} arr[].parent 
- * @param {String} arr[].class 
+ * @param {Object[]} arr
+ * @param {String} arr[].name
+ * @param {String} arr[].parent
+ * @param {String} arr[].class
  * @param {String} arr[].type
- * @param {Object} arr[].attributes 
+ * @param {Object} arr[].attributes
  * @returns HtmlElement
  */
 export function createComplexElement(arr) {
@@ -48,14 +55,14 @@ export function createComplexElement(arr) {
 
 /**
  * Crée un élément Html à partir d'un objet
- * @param {Object} obj 
- * @param {String} obj.name 
- * @param {String} obj.parent 
- * @param {String} obj.class 
+ * @param {Object} obj
+ * @param {String} obj.name
+ * @param {String} obj.parent
+ * @param {String} obj.class
  * @param {String} obj.type
  * @param {String} obj.content
  * @param {String} obj.innerhtml
- * @param {Object} obj.attributes 
+ * @param {Object} obj.attributes
  * @returns HtmlElement
  */
 export function createElementFromObject(obj) {
@@ -67,12 +74,12 @@ export function createElementFromObject(obj) {
     el.setAttribute(data, value)
   }
   if (obj.content) el.appendChild(document.createTextNode(obj.content))
-  if(obj.innerhtml)el.innerHTML=obj.innerhtml
+  if (obj.innerhtml) el.innerHTML = obj.innerhtml
   return el
 }
 
 /**
- * 
+ *
  * @param {string} text - text en camelCase
  * @returns {string}
  */
@@ -83,7 +90,7 @@ function camelCaseParser(text) {
 }
 
 /**
- * 
+ *
  * @param {HTMLelement} element - element parent dans lequel chercher les éléments focusables
  * @returns {Array.<HTMLelement>}
  */

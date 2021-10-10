@@ -6,7 +6,8 @@
   font-weight: 500;
   transition: color 0.3s, background-color 0.3s;
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     background: $primary-1;
     color: white;
   }

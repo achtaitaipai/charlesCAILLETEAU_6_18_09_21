@@ -30,21 +30,28 @@ export class Media {
     this.appendElements()
 
     this.likesEl = this.cardElement.querySelector('.mediaCard__likes')
-    this.onLikeClick = this.onLikeClick.bind(this)
-    this.likesEl.addEventListener('click', this.onLikeClick)
+    this.onLike = this.onLike.bind(this)
+    this.likesEl.addEventListener('click', this.onLike)
+    this.onLikeKey = this.onLikeKey.bind(this)
+    this.likesEl.addEventListener('keydown', this.onLikeKey)
   }
 
   /**
    * Lorsque le bouton like est cliqué
    */
-  onLikeClick(e) {
+  onLikeKey(e) {
+    if (e.code === 'Enter') this.onLike(e)
+  }
+
+  onLike(e) {
     this.likes++
     this.likesEl.textContent = this.likesEl.textContent.replace(
       this.likes - 1,
       this.likes
     )
     this.refreshTotalLikes(e)
-    this.likesEl.removeEventListener('click', this.onLikeClick)
+    this.likesEl.removeEventListener('click', this.onLike)
+    this.likesEl.removeEventListener('keydown', this.onLikeKey)
   }
 
   /**
@@ -113,7 +120,7 @@ export class Media {
     const mediaCardObj = [
       {
         name: 'root',
-        type: 'div',
+        type: 'article',
         class: 'mediaCard',
         parent: 'main',
       },

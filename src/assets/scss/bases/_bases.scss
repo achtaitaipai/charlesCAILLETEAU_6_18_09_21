@@ -36,3 +36,8 @@ a {
   white-space: nowrap; /* added line */
   border: 0;
 }
+
+.error {
+  text-align: center;
+  color: $primary-1;
+}
