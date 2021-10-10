@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisheye</title>
+  <script defer src="index.bundle.js"></script></head>
+  <body>
+    <header class="header">
+      <a href="#main" class="header__hiddenlink">Passer au contenu</a>
+
+      <a href="index.html" class="header__logo"
+        ><img
+          src="./assets/images/logo.svg"
+          alt="Logo Fisheye - Page d'accueil"
+      /></a>
+      <nav class="nav" aria-label="main-navigation" role="navigation">
+        <ul class="nav__tagsList">
+          <li class="nav__tag">
+            <a href="?filter=portrait" class="nav__lien" data-tag="portrait"
+              ><span class="sr-only">tag</span> #Portrait</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=art" class="nav__lien" data-tag="art"
+              ><span class="sr-only">tag</span> #Art</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=fashion" class="nav__lien" data-tag="fashion"
+              ><span class="sr-only">tag</span> #Fashion</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a
+              href="?filter=architecture"
+              class="nav__lien"
+              data-tag="architecture"
+              ><span class="sr-only">tag</span> #Architecture</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=travel" class="nav__lien" data-tag="travel"
+              ><span class="sr-only">tag</span> #Travel</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=sport" class="nav__lien" data-tag="sport"
+              ><span class="sr-only">tag</span> #Sport</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=animals" class="nav__lien" data-tag="animals"
+              ><span class="sr-only">tag</span> #Animals</a
+            >
+          </li>
+          <li class="nav__tag">
+            <a href="?filter=events" class="nav__lien" data-tag="events"
+              ><span class="sr-only">tag</span> #Events</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main" id="main">
+      <h1 class="main__title">Nos photographes</h1>
+      <p class="error">
+        Aucun photographe ne correspond aux tags sélectionnés.
+      </p>
+      <div class="main__photographers"></div>
+    </main>
+  </body>
+</html>
