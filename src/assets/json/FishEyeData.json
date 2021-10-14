@@ -503,7 +503,8 @@
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-05-06",
-      "price": 60
+      "price": 60,
+      "altText": "Canal de Venise bordé par des bâtiments. Des pirogues et autres bateaux naviquent"
     },
     {
       "id": 95293534,
@@ -513,7 +514,8 @@
       "tags": ["travel"],
       "likes": 33,
       "date": "2019-05-12",
-      "price": 60
+      "price": 60,
+      "altText": "Photo prise depuis une étendue d'eau les rives recouvertes de grands arbres se rejoignent devant de grandes montagnes. Les arbres se reflètent d'ans l'eau."
     },
     {
       "id": 356234343,
@@ -523,7 +525,8 @@
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-06-20",
-      "price": 60
+      "price": 60,
+      "altText": "Un vélo repose sur une rambarde d'escalier, au second plan un lampadaire typique parisien. La rue est pavée et en arrière plan se tient un grand bâtiment, dont les terrasses sont fleuries."
     },
     {
       "id": 235234343,
@@ -533,7 +536,8 @@
       "tags": ["travel"],
       "likes": 63,
       "date": "2019-06-26",
-      "price": 60
+      "price": 60,
+      "altText": "Photo prise depuis l'intérieur d'un temple, les murs sont recouverts de bas-reliefs. Au centre de l'image un porte laissant apercevoir une ville et ses arbres."
     },
     {
       "id": 6234234343,
@@ -543,7 +547,8 @@
       "tags": ["architecture"],
       "likes": 52,
       "date": "2019-06-30",
-      "price": 60
+      "price": 60,
+      "altText": "Contre-plongée sur la Nouvelle Synagogue de Berlin. On peut y voir trois coupoles ornées."
     },
     {
       "id": 6525666253,
@@ -553,7 +558,8 @@
       "tags": ["architecture"],
       "likes": 63,
       "date": "2019-07-20",
-      "price": 60
+      "price": 60,
+      "altText": "Une colline recouverte de bâtiments blancs et au toit bordé de rouge. En arrière plan une grande chaîne de montagnes."
     },
     {
       "id": 98252523433,
@@ -563,7 +569,8 @@
       "tags": ["architecture"],
       "likes": 88,
       "date": "2020-01-05",
-      "price": 60
+      "price": 60,
+      "altText": "Contre-plongée sur la tour de Pise penchant légèrement sur la droite. Une lumière orangée éclaire la partie droite de la tour."
     },
     {
       "id": 9259398453,
@@ -573,7 +580,8 @@
       "tags": ["architecture"],
       "likes": 57,
       "date": "2020-01-20",
-      "price": 65
+      "price": 65,
+      "altText": "Vue aérienne sur de grandes routes. Certaines sont sur-élevées et l'ensemble des routes forment un cercle coupés par des lignes verticales. La caméra effectue ensuite un panoramique de bas en haut."
     },
     {
       "id": 3523523534,
@@ -583,7 +591,8 @@
       "tags": ["architecture"],
       "likes": 54,
       "date": "2020-05-05",
-      "price": 60
+      "price": 60,
+      "altText": "Légère contre-plongée sur l'angle d'un bâtiment rouge et blanc, le toit est bleu foncé presque noir et le ciel est d'un bleu très clair."
     },
 
     {
@@ -594,7 +603,8 @@
       "tags": ["sport"],
       "likes": 150,
       "date": "2018-02-30",
-      "price": 70
+      "price": 70,
+      "altText": "Une femme dans un gymnase se tient par une main à une corde et effectue des rotations avec le reste de son corps."
     },
     {
       "id": 235234343,
@@ -604,7 +614,8 @@
       "tags": ["sport"],
       "likes": 101,
       "date": "2018-03-05",
-      "price": 65
+      "price": 65,
+      "altText": "Plongée sur une femme escaladant un rocher qui déborde hors du cadre."
     },
     {
       "id": 235343222,
@@ -614,7 +625,8 @@
       "tags": ["sport"],
       "likes": 103,
       "date": "2018-03-10",
-      "price": 70
+      "price": 70,
+      "altText": "Un surfer vue de face avance vers l'appareil et est entouré par une vague qui donne l'impression d'un tunnel d'eau."
     },
     {
       "id": 7775342343,
@@ -624,7 +636,8 @@
       "tags": ["sport"],
       "likes": 77,
       "date": "2018-04-16",
-      "price": 50
+      "price": 50,
+      "altText": "Contre-plongée sur un skieur en plein saut, en arrière-plan un ciel entièrement bleu. L'angle de l'image laisse imaginé qu'il est très haut."
     },
     {
       "id": 9253445784,
@@ -634,7 +647,8 @@
       "tags": ["sport"],
       "likes": 88,
       "date": "2018-04-22",
-      "price": 65
+      "price": 65,
+      "altText": "Cinq femmes en pleine course dans un stade, quatre d'entre elles ne touchent pas le sol et sont presque dans la même position. "
     },
     {
       "id": 22299394,
@@ -644,7 +658,8 @@
       "tags": ["sport"],
       "likes": 95,
       "date": "2018-04-27",
-      "price": 70
+      "price": 70,
+      "altText": "Un skateur torse nu est en plein milieu d'un saut. derrière lui un bowl de skate-park et la plage."
     },
     {
       "id": 3452342633,
@@ -654,7 +669,8 @@
       "tags": ["architecture"],
       "likes": 52,
       "date": "2018-05-03",
-      "price": 75
+      "price": 75,
+      "altText": "Contre plongée sur un dôme vu de l'intérieur, Le bâtiment est entièrement blanc."
     },
     {
       "id": 939234243,
@@ -664,7 +680,8 @@
       "tags": ["architecture"],
       "likes": 55,
       "date": "2018-05-10",
-      "price": 72
+      "price": 72,
+      "altText": "Un bâtiment aux formes très organiques se tient derrière une étendue d'eau. Il semble lui-même être une vague."
     },
     {
       "id": 222959233,
@@ -674,7 +691,8 @@
       "tags": ["architecture"],
       "likes": 85,
       "date": "2018-05-15",
-      "price": 71
+      "price": 71,
+      "altText": "Contre plongée en noir et blanc sur un bâtiment qui dessine un fer à cheval dans le ciel."
     },
     {
       "id": 965933434,
@@ -684,7 +702,8 @@
       "tags": ["architecture"],
       "likes": 66,
       "date": "2018-05-20",
-      "price": 58
+      "price": 58,
+      "altText": "Contre-plongée entre deux bâtiments orangés qui se reflètent l'un l'autre. L'espace laissé entre les deux dessine une croix."
     },
     {
       "id": 777723343,
@@ -694,7 +713,8 @@
       "tags": ["architecture"],
       "likes": 79,
       "date": "2018-05-21",
-      "price": 80
+      "price": 80,
+      "altText": "un bâtiment aux formes courbes devant le ciel."
     }
   ]
 }
