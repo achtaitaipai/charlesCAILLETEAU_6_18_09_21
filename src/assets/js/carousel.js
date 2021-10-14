@@ -66,7 +66,7 @@ export class Carousel {
       el.setAttribute('tabindex', 0)
     })
     this.legend.textContent = this.items[this.index].getAttribute('data-legend')
-    this.element.focus()
+    this.items[this.index].querySelector('.carousel__media').focus()
 
     // créer les listeners
     this.nextFrame = this.nextFrame.bind(this)

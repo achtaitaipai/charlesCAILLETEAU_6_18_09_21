@@ -184,6 +184,12 @@ export class Media {
     }
     const carouselItem = createElementFromObject(carouselItemObj)
     carouselItem.append(createElementFromObject(this.media.carouselItemObj))
+
+    if (this.media.altText) {
+      const alt = this.media.altText
+
+      carouselItem.append(createElementFromObject(alt))
+    }
     return carouselItem
   }
 }
@@ -210,7 +216,7 @@ class Photo {
       parent: 'imgContainer',
       attributes: {
         src: `./assets/images/${obj.image}`,
-        alt: obj.title,
+        alt: obj.altText,
       },
     }
     this.carouselItemObj = {
@@ -218,7 +224,7 @@ class Photo {
       class: 'carousel__media',
       attributes: {
         src: `./assets/images/${obj.image}`,
-        alt: '',
+        alt: obj.altText,
       },
     }
   }
@@ -255,6 +261,12 @@ class Video {
         src: `./assets/images/${obj.video}`,
         controls: true,
       },
+    }
+
+    this.altText = {
+      type: 'span',
+      class: 'sr-only',
+      content: obj.altText,
     }
   }
 }
