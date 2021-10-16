@@ -31,7 +31,7 @@ main.insertBefore(
 document.title = 'Fisheye - ' + photographer.name
 // eslint-disable-next-line no-unused-vars
 const dialog = new ContactDialog()
-// au chargement activé les animations
+// au chargement activer les animations
 // https://css-tricks.com/transitions-only-after-page-load/
 window.addEventListener('load', () => {
   const anims = document.getElementsByClassName('preload')
@@ -50,6 +50,7 @@ mediaData.forEach((data) => {
   })
   medias.push(media)
 })
+
 Media.sort('popularity', medias)
 // au clique sur une mediaCard => ouvrir le carousel à l'image correspondante
 for (let i = 0; i < medias.length; i++) {
